@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --pb-background: #050914;
+  --pb-background-soft: #091224;
+  --pb-panel: rgba(12, 20, 38, 0.72);
+  --pb-panel-strong: rgba(8, 14, 30, 0.92);
+  --pb-foreground: #f7fbff;
+  --pb-muted: #93a4c0;
+  --pb-border: rgba(255, 255, 255, 0.1);
+  --pb-emerald: #7df6cb;
+  --pb-violet: #94a1ff;
+  --pb-amber: #ffd089;
+  --pb-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--pb-background);
+  --color-foreground: var(--pb-foreground);
+  --font-sans:
+    "Satoshi", "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-mono:
+    "JetBrains Mono", "SFMono-Regular", "SF Mono", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(125, 246, 203, 0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(148, 161, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, #091120 0%, #050914 42%, #03060d 100%);
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--pb-foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(125, 246, 203, 0.25);
+}
+
+.pb-shell {
+  position: relative;
+}
+
+.pb-shell::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-position: center;
+  background-size: 160px 160px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 80%);
+}
+
+.pb-panel {
+  background: var(--pb-panel);
+  border: 1px solid var(--pb-border);
+  box-shadow: var(--pb-shadow);
+  backdrop-filter: blur(24px);
+}
+
+.pb-tag {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.pb-grid-glow {
+  position: relative;
+}
+
+.pb-grid-glow::after {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  content: "";
+  background:
+    linear-gradient(145deg, rgba(125, 246, 203, 0.18), rgba(148, 161, 255, 0.08), transparent 60%);
+  opacity: 0.7;
+  filter: blur(24px);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid rgba(125, 246, 203, 0.85);
+  outline-offset: 2px;
+}
