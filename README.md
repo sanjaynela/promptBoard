@@ -7,6 +7,9 @@ PromptBoard is a fictional developer-tool product built to demonstrate two GPT-5
 
 The app combines a polished marketing page with an interactive prompt dashboard so the repo can show both visual direction and real browser-level interaction.
 
+## Live Demo
+[promptboard-omega.vercel.app](https://promptboard-omega.vercel.app)
+
 ## What This Repo Demonstrates
 - A premium dark-mode SaaS landing page for a developer product
 - A dashboard for saving, filtering, inspecting, and drafting prompts
@@ -43,6 +46,33 @@ npm run lint
 npm run test:e2e
 ```
 
+## Deploying On Vercel
+PromptBoard is deployment-ready for the free Vercel Hobby plan.
+
+### Fastest path
+1. Sign in to [Vercel](https://vercel.com/) with GitHub.
+2. Import `sanjaynela/promptBoard`.
+3. Keep the default Next.js build settings.
+4. Deploy from the `main` branch.
+
+### CLI path
+```bash
+vercel login
+vercel
+vercel --prod
+```
+
+The app does not require environment variables for the current demo version.
+
+Note: the current production deployment is live at [promptboard-omega.vercel.app](https://promptboard-omega.vercel.app).
+
+### Post-deploy checks
+- Confirm `/` loads correctly.
+- Confirm `/dashboard` loads correctly.
+- Confirm the assets in `public/generated` render in production.
+- Confirm search, filters, detail view, and in-session prompt creation still work.
+- Confirm the mobile layout remains usable.
+
 ## Generated Asset Workflow
 The image prompts, their intended role, and the browser-inspection prompts used for refinement are documented in [`docs/prompts.md`](/Users/sanjay/personalProjects/promptBoard/docs/prompts.md).
 
@@ -60,3 +90,4 @@ This project turns the article’s PromptBoard idea into a concrete frontend exp
 - This repo uses only mock data.
 - No credentials or machine-specific auth material should ever be committed.
 - The git author identity for personal projects can be configured locally with [`setup-personal-git.sh`](/Users/sanjay/personalProjects/setup-personal-git.sh).
+- The recommended free deployment target for this repo is Vercel Hobby.
