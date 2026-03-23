@@ -1,6 +1,6 @@
 # PromptBoard Workflow Prompts
 
-This repo is designed to show two complementary frontend workflows from the article: image-guided design and browser-aware iteration.
+This repo is designed to show two complementary frontend workflows from the article: image-guided frontend design and persistent computer-use / browser-aware iteration.
 
 ## Image Generation Prompts
 
